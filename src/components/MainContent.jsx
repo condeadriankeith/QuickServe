@@ -359,7 +359,7 @@ const MainContent = ({
     if (socket) {
       socket.emit('addMenuItem', {
         category: newMenuItem.category,
-        item: { name: newMenuItem.name, img: newMenuItem.img, price: newMenuItem.price }
+        item: { name: newMenuItem.name, img: newMenuItem.img, price: newMenuItem.price, stock: newMenuItem.stock }
       });
     }
     setNewMenuItem({ name: '', img: '', category: newMenuItem.category });
@@ -413,7 +413,7 @@ const MainContent = ({
       if (socket) {
         socket.emit('addMenuItem', {
           category: newMenuItem.category,
-          item: { name: newMenuItem.name, img, price: newMenuItem.price }
+          item: { name: newMenuItem.name, img, price: newMenuItem.price, stock: newMenuItem.stock }
         });
       }
       setNewMenuItem({ name: '', img: '', category: newMenuItem.category });
@@ -549,7 +549,6 @@ const MainContent = ({
               <h2 style={{ marginBottom: 18 }}>Add Food Item</h2>
               <form onSubmit={handleAddFoodItem}>
                 <input type="text" placeholder="Name" value={newMenuItem.name} onChange={e => setNewMenuItem(n => ({ ...n, name: e.target.value }))} required style={{ width: '100%', padding: '10px 14px', borderRadius: 8, border: '1.5px solid #e0e0e0', fontSize: '1.1rem', marginBottom: 16 }} />
-                <input type="text" placeholder="Image URL" value={newMenuItem.img} onChange={e => setNewMenuItem(n => ({ ...n, img: e.target.value }))} required style={{ width: '100%', padding: '10px 14px', borderRadius: 8, border: '1.5px solid #e0e0e0', fontSize: '1.1rem', marginBottom: 16 }} />
                 <input type="number" placeholder="Price (₱)" value={newMenuItem.price || ''} min={1} required onChange={e => setNewMenuItem(n => ({ ...n, price: Number(e.target.value) }))} style={{ width: '100%', padding: '10px 14px', borderRadius: 8, border: '1.5px solid #e0e0e0', fontSize: '1.1rem', marginBottom: 16 }} />
                 <input type="number" placeholder="Stock" value={newMenuItem.stock || ''} min={0} required onChange={e => setNewMenuItem(n => ({ ...n, stock: Number(e.target.value) }))} style={{ width: '100%', padding: '10px 14px', borderRadius: 8, border: '1.5px solid #e0e0e0', fontSize: '1.1rem', marginBottom: 16 }} />
                 {addError && <div style={{ color: 'red', marginBottom: 8 }}>{addError}</div>}
