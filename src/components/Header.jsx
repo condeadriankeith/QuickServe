@@ -15,7 +15,7 @@ function timeAgo(timestamp) {
   return `${hours} hour${hours > 1 ? 's' : ''} ago`;
 }
 
-const Header = ({ notifications = [], unreadCount = 0, notifPopupOpen = false, setNotifPopupOpen = () => {}, onLogout }) => {
+const Header = ({ notifications = [], unreadCount = 0, notifPopupOpen = false, setNotifPopupOpen = () => {}, onLogout, onSidebarToggle, sidebarOpen }) => {
   const [logoutModalOpen, setLogoutModalOpen] = useState(false);
   const notifBtnRef = useRef(null);
   const notifPopupRef = useRef(null);
@@ -56,6 +56,20 @@ const Header = ({ notifications = [], unreadCount = 0, notifPopupOpen = false, s
   return (
     <header className="header">
       <div className="logo">
+        {/* Hamburger toggle for mobile, left of logo/title */}
+        <button
+          className="sidebar-toggle"
+          aria-label={sidebarOpen ? 'Close sidebar' : 'Open sidebar'}
+          onClick={onSidebarToggle}
+        >
+          <span style={{ display: 'inline-block', width: 28, height: 28 }}>
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect y="5" width="28" height="3" rx="1.5" fill="#fff" />
+              <rect y="12.5" width="28" height="3" rx="1.5" fill="#fff" />
+              <rect y="20" width="28" height="3" rx="1.5" fill="#fff" />
+            </svg>
+          </span>
+        </button>
         <img src="https://cdn-icons-png.flaticon.com/512/3427/3427703.png" alt="Cooking Pot" className="cookingpot-icon white-icon" style={{ width: 28, height: 28, objectFit: 'contain' }} />
         <h1>QuickServe</h1>
       </div>

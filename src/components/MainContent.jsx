@@ -588,7 +588,6 @@ const MainContent = ({
         </div>
         {tab === 'pending' && (
           <button className="new-order-btn" onClick={() => {
-            // Always clear editing state and set new order mode
             setForm({ category: 'Appetizer', item: menu['Appetizer'][0].name, quantity: 1, customer: '', type: 'Dine-in', table: '', specialInstructions: '' });
             setOrderItems([]);
             setBasketCount(0);
@@ -602,8 +601,6 @@ const MainContent = ({
           </button>
         )}
       </div>
-
-      {/* Only show category tabs for active orders */}
       {tab === 'active' && (
         <div className="category-tabs">
           {categories.map((cat) => (
@@ -617,10 +614,7 @@ const MainContent = ({
           ))}
         </div>
       )}
-
-      {/* Admin controls for menu management */}
       {role === 'admin' && renderAdminMenuControls()}
-
       <div className="orders-grid">
         {/* Pending and Completed: show all orders as single card with all items */}
         {(tab === 'pending' || tab === 'completed') && (

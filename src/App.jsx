@@ -37,6 +37,7 @@ function Dashboard({ onLogout, role }) {
   const [notifPopupOpen, setNotifPopupOpen] = useState(false);
   const [socket, setSocket] = useState(null);
   const [menuState, setMenuState] = useState({});
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   // Refs to always have latest state in interval
   const ordersRef = useRef(orders);
@@ -460,6 +461,8 @@ function Dashboard({ onLogout, role }) {
         notifPopupOpen={notifPopupOpen}
         setNotifPopupOpen={setNotifPopupOpen}
         onLogout={onLogout}
+        onSidebarToggle={() => setSidebarOpen(v => !v)}
+        sidebarOpen={sidebarOpen}
       />
       <div className="content-wrapper">
         <Sidebar
@@ -480,6 +483,8 @@ function Dashboard({ onLogout, role }) {
           }
           role={role}
           todayStats={todayStats}
+          sidebarOpen={sidebarOpen}
+          setSidebarOpen={setSidebarOpen}
         />
         {content}
       </div>

@@ -254,3 +254,22 @@
 [data-theme="dark"] .logout-btn:hover {
   background: #2a2320;
 }
+
+@media (max-width: 600px) {
+  .header {
+    flex-direction: row;
+    align-items: center;
+    height: 48px;
+    padding: 0 8px;
+    gap: 0;
+  }
+  .logo {
+    margin-bottom: 0;
+    gap: 8px;
+  }
+  .user-actions {
+    width: auto;
+    justify-content: flex-end;
+    gap: 8px;
+  }
+}
