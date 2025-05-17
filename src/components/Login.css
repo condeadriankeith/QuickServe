@@ -226,4 +226,17 @@
 .login-bg, .login-container, .login-title, .login-box {
   position: relative;
   z-index: 1;
+}
+
+.spinner {
+  display: inline-block;
+  font-size: 1.3em;
+  vertical-align: middle;
+  animation: spinner-rotate 1s linear infinite;
+}
+
+@keyframes spinner-rotate {
+  100% {
+    transform: rotate(360deg);
+  }
 } 
