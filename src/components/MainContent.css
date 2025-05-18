@@ -1331,10 +1331,6 @@
 
 @media (max-width: 480px) {
   /* Additional mobile-only CSS */
-  .admin-add-btn .button-text::before {
-    content: "Add";
-  }
-  
   .admin-add-btn .button-text {
     position: relative;
   }
