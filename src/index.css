@@ -42,9 +42,14 @@
   box-sizing: border-box;
 }
 
-html {
+html, body {
   touch-action: manipulation;
   -webkit-text-size-adjust: 100%;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  overflow: auto;
+  overscroll-behavior: none;
 }
 
 body {
@@ -55,6 +60,9 @@ body {
   transition: background 0.3s, color 0.3s;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  max-width: 100vw;
+  max-height: 100vh;
+  overflow-x: hidden;
 }
 
 button, 
@@ -75,11 +83,28 @@ input[type="number"],
 input[type="email"],
 input[type="password"],
 input[type="search"],
+input[type="tel"],
 select,
 textarea {
-  font-size: 16px; /* Minimum font size to prevent zoom on iOS */
+  font-size: 16px !important; /* Minimum font size to prevent zoom on iOS */
   -webkit-appearance: none; /* Remove default iOS styling */
-  border-radius: 0; /* Reset border-radius */
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 8px; /* Apply consistent border-radius */
+  transform: translateZ(0); /* Prevent iOS text size adjustment */
+}
+
+/* Specifically for iOS Safari */
+@supports (-webkit-touch-callout: none) {
+  input, select, textarea, button {
+    font-size: 16px !important;
+  }
+  
+  /* Prevent iOS form zoom */
+  input, select, textarea {
+    font-size: 16px !important;
+    max-height: 999999px; /* Prevent font boosting */
+  }
 }
 
 .app-container {
