@@ -1,5 +1,10 @@
 # QuickServe Restaurant Order Management Dashboard
 
+A real-time restaurant order management system that helps track and manage orders for different parts of the restaurant.
+
+## Updates
+- Added compatibility fixes for iPhone 11 Safari browser to ensure proper popup display
+
 ## Real-Time Order Sync
 
 This app now supports real-time order updates between admin and server views using a backend server with Express and Socket.io.
