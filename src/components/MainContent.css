@@ -1307,14 +1307,12 @@
   }
   
   .admin-add-btn {
-    padding: 4px 8px;
+    padding: 4px 10px;
     font-size: 12px;
     height: 28px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    max-width: 140px;
-    min-width: 120px;
   }
   
   .admin-edit-btn svg, .admin-add-btn svg {
@@ -1324,18 +1322,5 @@
   }
 }
 
-/* Responsive button text */
-.button-text {
-  display: inline-block;
-}
-
-@media (max-width: 480px) {
-  /* Additional mobile-only CSS */
-  .admin-add-btn .button-text {
-    position: relative;
-  }
-  
-  .admin-add-btn .button-text span {
-    display: none;
-  }
-}
+/* Remove .button-text rules since not needed anymore */
+.button-text { display: none; }
