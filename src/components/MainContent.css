@@ -1200,3 +1200,101 @@
     max-width: 99vw;
   }
 }
+
+/* Add or modify existing admin-header-row styles */
+.admin-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+/* Add or modify existing title date/items count styles */
+.admin-header-row .subtitle {
+  color: #888;
+  font-size: 16px;
+  margin-top: 2px;
+}
+
+/* Add or modify existing admin button styles */
+.admin-edit-btn, .admin-add-btn {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 8px 16px;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.2s;
+  border-radius: 8px;
+}
+
+.admin-edit-btn svg, .admin-add-btn svg {
+  margin-right: 8px;
+}
+
+/* Update media queries for mobile */
+@media (max-width: 768px) {
+  .gallery-grid.animated-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 900px) {
+  .main-content {
+    padding: 2rem 1rem;
+    margin-left: 0.5rem;
+  }
+  .basket-container {
+    bottom: 16px;
+    right: 16px;
+  }
+  .basket-button {
+    width: 48px;
+    height: 48px;
+    font-size: 1.3rem;
+  }
+}
+
+/* Add new media query for iPhone-sized screens */
+@media (max-width: 480px) {
+  .admin-menu-items-grid.animated-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+  
+  .admin-menu-item-card {
+    padding: 12px;
+  }
+  
+  .admin-menu-item-img {
+    width: 90px;
+    height: 90px;
+  }
+  
+  .admin-menu-item-name {
+    font-size: 14px;
+  }
+  
+  .admin-header-row h1 {
+    font-size: 24px !important;
+  }
+  
+  .admin-header-row div:first-child div {
+    color: #888;
+    font-size: 13px !important; 
+  }
+  
+  .admin-edit-btn, .admin-add-btn {
+    padding: 6px 12px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    height: 34px;
+  }
+  
+  .admin-edit-btn svg, .admin-add-btn svg {
+    margin-right: 6px;
+    font-size: 16px;
+  }
+}

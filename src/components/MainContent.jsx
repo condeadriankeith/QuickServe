@@ -480,11 +480,11 @@ const MainContent = ({
             <div style={{ color: '#888', fontSize: 16, marginTop: 2 }}>{formattedDate} • {items.length} items</div>
           </div>
           <div style={{ display: 'flex', gap: 12 }}>
-            <button className="admin-edit-btn" style={{ background: isEditMode ? 'var(--primary-color)' : '#fff', color: isEditMode ? '#fff' : 'var(--primary-color)', border: '2px solid var(--primary-color)', borderRadius: 8, padding: '8px 16px', fontWeight: 600, fontSize: 16, cursor: 'pointer', transition: 'all 0.2s' }} onClick={() => setIsEditMode(v => !v)}>
-              <FaEdit style={{ marginRight: 8 }} /> Edit
+            <button className="admin-edit-btn" style={{ background: isEditMode ? 'var(--primary-color)' : '#fff', color: isEditMode ? '#fff' : 'var(--primary-color)', border: '2px solid var(--primary-color)', borderRadius: 8, cursor: 'pointer', transition: 'all 0.2s' }} onClick={() => setIsEditMode(v => !v)}>
+              <FaEdit /> Edit
             </button>
-            <button className="admin-add-btn" style={{ background: 'var(--primary-color)', color: '#fff', border: 'none', borderRadius: 8, padding: '8px 16px', fontWeight: 600, fontSize: 16, cursor: 'pointer', boxShadow: '0 2px 8px rgba(244,93,34,0.08)', transition: 'all 0.2s' }} onClick={openAddFoodItemModal}>
-              <FaPlus style={{ marginRight: 8 }} /> Add Food Item
+            <button className="admin-add-btn" style={{ background: 'var(--primary-color)', color: '#fff', border: 'none', borderRadius: 8, cursor: 'pointer', boxShadow: '0 2px 8px rgba(244,93,34,0.08)', transition: 'all 0.2s' }} onClick={openAddFoodItemModal}>
+              <FaPlus /> Add Food Item
             </button>
           </div>
         </div>
