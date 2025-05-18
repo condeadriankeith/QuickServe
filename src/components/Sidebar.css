@@ -329,18 +329,18 @@
     z-index: 3001;
     transform: translateX(-100%);
     transition: transform 0.35s cubic-bezier(0.4,0,0.2,1);
-    box-shadow: 4px 0 24px rgba(0,0,0,0.18);
+    box-shadow: none !important;
     border-radius: 0 12px 12px 0;
     padding: 18px 12px 10px 12px;
     display: flex;
     flex-direction: column;
     will-change: transform;
-    padding-left: 16px;
-    padding-right: 16px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
   .sidebar.open {
     transform: translateX(0);
-    box-shadow: 4px 0 24px rgba(0,0,0,0.18);
+    box-shadow: none !important;
   }
   .sidebar-toggle {
     display: flex;
@@ -349,15 +349,15 @@
     gap: 8px;
   }
   .nav-item {
-    padding-left: 8px;
-    padding-right: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
     font-size: 1.05rem;
     border-radius: 8px;
     gap: 6px;
   }
   .nav-item.active {
-    padding-left: 14px;
-    padding-right: 14px;
+    padding-left: 22px;
+    padding-right: 22px;
     font-size: 1.1rem;
     border-radius: 14px;
     gap: 6px;
