@@ -196,29 +196,11 @@
 }
 
 [data-theme="dark"] .login-bg {
-  background: #1a1c21;
-  background-image:
-    radial-gradient(circle at var(--gradient-x, 50%) var(--gradient-y, 50%), 
-      rgba(255, 125, 0, 0.25) 0%, 
-      rgba(207, 102, 0, 0.18) 30%, 
-      rgba(169, 83, 0, 0.12) 50%, 
-      rgba(131, 65, 0, 0.05) 70%, 
-      transparent 90%),
-    radial-gradient(circle at calc(100% - var(--gradient-x, 50%)) calc(100% - var(--gradient-y, 50%)), 
-      rgba(255, 181, 71, 0.15) 0%, 
-      rgba(207, 102, 0, 0.08) 40%, 
-      transparent 70%),
-    linear-gradient(130deg, 
-      rgba(37, 39, 44, 1) 0%, 
-      rgba(28, 29, 34, 1) 100%);
+  background: linear-gradient(to bottom, var(--bg-gradient-start), var(--bg-gradient-end));
 }
 
 [data-theme="dark"] .login-bg::before {
-  background: radial-gradient(circle at var(--gradient-x, 50%) var(--gradient-y, 50%), 
-    rgba(255, 139, 36, 0.18) 0%,
-    rgba(207, 102, 0, 0.1) 30%,
-    transparent 70%);
-  opacity: 0.5;
+  display: none;
 }
 
 [data-theme="dark"] .login-title {
