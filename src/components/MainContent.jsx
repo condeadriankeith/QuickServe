@@ -65,6 +65,37 @@ const MainContent = ({
   const [addError, setAddError] = useState('');
   const [editError, setEditError] = useState('');
 
+  // Add reference for viewport checking
+  const basketRef = useRef(null);
+  const [basketPosition, setBasketPosition] = useState('bottom');
+  
+  // Track viewport changes and basket visibility
+  useEffect(() => {
+    const checkBasketVisibility = () => {
+      if (!basketRef.current) return;
+      
+      const rect = basketRef.current.getBoundingClientRect();
+      const viewportHeight = window.innerHeight;
+      
+      // Check if the basket would be covered by the bottom of the screen or keyboard
+      if (rect.bottom > viewportHeight - 80) {
+        setBasketPosition('top');
+      } else if (rect.top < 80) {
+        setBasketPosition('bottom');
+      }
+    };
+    
+    // Run immediately and on resize/scroll
+    checkBasketVisibility();
+    window.addEventListener('resize', checkBasketVisibility);
+    window.addEventListener('scroll', checkBasketVisibility);
+    
+    return () => {
+      window.removeEventListener('resize', checkBasketVisibility);
+      window.removeEventListener('scroll', checkBasketVisibility);
+    };
+  }, [showModal]);
+
   // Effect to handle editing an order
   useEffect(() => {
     if (editingOrder) {
@@ -802,7 +833,10 @@ const MainContent = ({
                 ))}
               </div>
             </div>
-            <div className="basket-container">
+            <div 
+              className={`basket-container ${basketPosition === 'top' ? 'basket-top' : 'basket-bottom'}`}
+              ref={basketRef}
+            >
               <button 
                 type="button" 
                 className="basket-button"

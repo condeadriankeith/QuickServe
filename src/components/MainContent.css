@@ -516,6 +516,17 @@
   right: 24px;
   z-index: 20;
   pointer-events: auto;
+  transition: all 0.3s ease;
+}
+
+.basket-top {
+  bottom: auto;
+  top: 80px;
+}
+
+.basket-bottom {
+  top: auto;
+  bottom: 24px;
 }
 
 .basket-button {
@@ -1296,6 +1307,20 @@
     height: 56px !important;
     font-size: 2rem !important;
   }
+  .basket-container {
+    position: fixed !important; 
+    bottom: 20px !important;
+    right: 20px !important;
+    z-index: 1000 !important;
+  }
+  .basket-top {
+    bottom: auto !important;
+    top: 80px !important;
+  }
+  .basket-bottom {
+    top: auto !important;
+    bottom: 20px !important;
+  }
   .modal-horizontal {
     flex-direction: column !important;
     min-width: unset !important;
@@ -1489,5 +1514,35 @@
     padding: 0 !important;
     align-items: flex-start !important;
     padding-top: 10vh !important;
+  }
+  .basket-container {
+    position: fixed !important;
+    bottom: 80px !important; /* Higher position to avoid controls */
+    right: 20px !important;
+    z-index: 1000 !important; /* Ensure it's above everything */
+  }
+  
+  /* Detect if at bottom of screen and adjust */
+  @media (max-height: 700px) {
+    .basket-container {
+      bottom: 120px !important; /* Move even higher on very small screens */
+    }
+  }
+  
+  @media (max-height: 600px) {
+    .basket-container {
+      top: 80px !important; /* Switch to top positioning on extremely small screens */
+      bottom: auto !important;
+    }
+  }
+  
+  .basket-top {
+    bottom: auto !important;
+    top: 80px !important;
+  }
+  
+  .basket-bottom {
+    top: auto !important;
+    bottom: 80px !important;
   }
 }
