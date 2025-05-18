@@ -165,39 +165,6 @@
   margin-bottom: 4px;
 }
 
-[data-theme="dark"] .login-bg {
-  background: linear-gradient(to bottom, var(--bg-gradient-start), var(--bg-gradient-end));
-}
-[data-theme="dark"] .login-title {
-  color: var(--primary-color);
-}
-[data-theme="dark"] .login-box {
-  background: var(--card-bg);
-  color: var(--text-color);
-  box-shadow: 0 8px 32px rgba(0,0,0,0.65);
-}
-[data-theme="dark"] .input-group label {
-  color: var(--text-light);
-}
-[data-theme="dark"] .input-group input {
-  background: #23242a;
-  color: var(--text-color);
-  border: 1px solid #444;
-}
-[data-theme="dark"] .input-group input:focus {
-  border: 1.5px solid var(--primary-color);
-}
-[data-theme="dark"] .login-btn {
-  background: var(--primary-color);
-  color: #fff;
-}
-[data-theme="dark"] .login-btn:hover {
-  background: var(--primary-dark);
-}
-[data-theme="dark"] .login-error {
-  color: var(--warning-color);
-}
-
 @keyframes fadeInUpScale {
   0% {
     opacity: 0;

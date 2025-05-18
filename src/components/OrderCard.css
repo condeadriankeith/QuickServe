@@ -410,44 +410,6 @@
   }
 }
 
-[data-theme="dark"] .order-card {
-  background-color: var(--card-bg);
-  color: var(--text-color);
-  box-shadow: 0 4px 24px rgba(0,0,0,0.45);
-  border: 1px solid #333;
-}
-[data-theme="dark"] .order-card.active:hover {
-  border: 2px solid #FFA94D;
-  box-shadow: 0 0 0 3px rgba(255, 169, 77, 0.25);
-}
-[data-theme="dark"] .order-card.pending:hover {
-  border: 2px solid #246bfd;
-  box-shadow: 0 0 0 3px rgba(36, 107, 253, 0.22);
-}
-[data-theme="dark"] .order-card.completed:hover {
-  border: 2px solid #38b000;
-  box-shadow: 0 0 0 3px rgba(56, 176, 0, 0.25);
-}
-[data-theme="dark"] .order-hash,
-[data-theme="dark"] .order-id {
-  color: var(--text-color);
-}
-[data-theme="dark"] .tag.preparing {
-  background-color: #2a2320;
-  color: #f4932a;
-}
-[data-theme="dark"] .tag.new {
-  background-color: #23242a;
-  color: #246bfd;
-}
-[data-theme="dark"] .special-instructions {
-  background-color: rgba(255, 204, 0, 0.08);
-}
-[data-theme="dark"] .customer,
-[data-theme="dark"] .order-type {
-  color: var(--text-light);
-}
-
 @media (max-width: 600px) {
   /* Main card scaling with preserved proportions */
   .order-card {

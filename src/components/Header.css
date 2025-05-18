@@ -212,49 +212,6 @@
   background: #FFF8ED;
 }
 
-[data-theme="dark"] .header {
-  background-color: var(--header-bg);
-  color: var(--text-color);
-}
-[data-theme="dark"] .cookingpot-icon,
-[data-theme="dark"] .white-icon {
-  filter: none;
-}
-[data-theme="dark"] .notification-btn {
-  color: var(--text-color);
-}
-[data-theme="dark"] .notif-popup {
-  background: var(--card-bg);
-  color: var(--text-color);
-  box-shadow: 0 8px 32px rgba(0,0,0,0.65);
-}
-[data-theme="dark"] .notif-popup-header {
-  background: #23242a;
-  border-bottom: 1px solid #333;
-  color: var(--text-color);
-}
-[data-theme="dark"] .notif-item {
-  background: var(--card-bg);
-  border-bottom: 1px solid #333;
-}
-[data-theme="dark"] .notif-item.unread {
-  background: #2a2320;
-}
-[data-theme="dark"] .notif-empty {
-  color: #888;
-}
-[data-theme="dark"] .profile-popup {
-  background: var(--card-bg);
-  color: var(--text-color);
-  box-shadow: 0 8px 32px rgba(0,0,0,0.65);
-}
-[data-theme="dark"] .logout-btn {
-  color: #ffb199;
-}
-[data-theme="dark"] .logout-btn:hover {
-  background: #2a2320;
-}
-
 @media (max-width: 600px) {
   .header {
     flex-direction: row;

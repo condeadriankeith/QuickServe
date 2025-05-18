@@ -18,25 +18,6 @@
   --shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
-[data-theme="dark"] {
-  --primary-color: #F45D22;
-  --primary-light: #2a2320;
-  --primary-dark: #E04D12;
-  --secondary-color: #246BFD;
-  --text-color: #F3F3F3;
-  --text-light: #B0B0B0;
-  --warning-color: #FF3B30;
-  --success-color: #34C759;
-  --bg-gradient-start: #18191c;
-  --bg-gradient-end: #23242a;
-  --card-bg: #23242a;
-  --sidebar-bg: #18191c;
-  --header-bg: #18191c;
-  --border-radius: 12px;
-  --border-radius-sm: 8px;
-  --shadow: 0 4px 24px rgba(0,0,0,0.45);
-}
-
 * {
   margin: 0;
   padding: 0;

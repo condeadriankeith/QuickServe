@@ -156,32 +156,6 @@
   margin-right: 0px;
 }
 
-[data-theme="dark"] .sidebar {
-  background-color: var(--sidebar-bg);
-  box-shadow: 4px 0 24px rgba(0,0,0,0.45);
-}
-[data-theme="dark"] .nav-item {
-  color: var(--text-color);
-}
-[data-theme="dark"] .nav-item:hover,
-[data-theme="dark"] .nav-item.active {
-  background-color: #23242a;
-  color: var(--primary-color);
-  border-color: var(--primary-color);
-}
-[data-theme="dark"] .nav-icon {
-  color: var(--text-light);
-}
-[data-theme="dark"] .nav-item.active .nav-icon {
-  color: var(--primary-color);
-}
-[data-theme="dark"] .badge {
-  color: var(--text-light);
-}
-[data-theme="dark"] .nav-item.active .badge {
-  color: var(--primary-color);
-}
-
 /* Sidebar Stats Segment */
 .sidebar-stats {
   margin-top: auto;
