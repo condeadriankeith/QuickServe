@@ -42,18 +42,44 @@
   box-sizing: border-box;
 }
 
+html {
+  touch-action: manipulation;
+  -webkit-text-size-adjust: 100%;
+}
+
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   color: var(--text-color);
   background: linear-gradient(to bottom, var(--bg-gradient-start), var(--bg-gradient-end));
   min-height: 100vh;
   transition: background 0.3s, color 0.3s;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+button, 
+input, 
+select, 
+textarea {
+  font-size: 16px; /* Prevents iOS Safari auto-zoom on focus */
+  font-family: inherit;
 }
 
 button {
   cursor: pointer;
   border: none;
-  font-family: inherit;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+select,
+textarea {
+  font-size: 16px; /* Minimum font size to prevent zoom on iOS */
+  -webkit-appearance: none; /* Remove default iOS styling */
+  border-radius: 0; /* Reset border-radius */
 }
 
 .app-container {
@@ -70,6 +96,11 @@ button {
 @media (max-width: 600px) {
   html {
     font-size: 15px;
+  }
+  
+  /* Ensure minimum font size for inputs on mobile */
+  input, select, textarea, button {
+    font-size: 16px !important;
   }
 }
 
