@@ -472,14 +472,14 @@ const MainContent = ({
     const items = menuState[activeCategory] || [];
     return (
       <main className="main-content admin-menu-panel">
-        <div className="admin-header-row" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 24 }}>
+        <div className="admin-header-row">
           <div>
             <h1 style={{ display: 'flex', alignItems: 'center', gap: 12, fontSize: 32, fontWeight: 700, margin: 0 }}>
               {currentCategory.icon} {currentCategory.label}
             </h1>
-            <div style={{ color: '#888', fontSize: 16, marginTop: 2 }}>{formattedDate} • {items.length} items</div>
+            <div className="subtitle" style={{ fontSize: 15, marginTop: 4 }}>{formattedDate} • {items.length} items</div>
           </div>
-          <div style={{ display: 'flex', gap: 12 }}>
+          <div style={{ display: 'flex', gap: 8 }}>
             <button className="admin-edit-btn" style={{ background: isEditMode ? 'var(--primary-color)' : '#fff', color: isEditMode ? '#fff' : 'var(--primary-color)', border: '2px solid var(--primary-color)', borderRadius: 8, cursor: 'pointer', transition: 'all 0.2s' }} onClick={() => setIsEditMode(v => !v)}>
               <FaEdit /> Edit
             </button>

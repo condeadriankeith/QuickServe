@@ -1201,7 +1201,7 @@
   }
 }
 
-/* Add or modify existing admin-header-row styles */
+/* Update admin header row basic styles */
 .admin-header-row {
   display: flex;
   align-items: center;
@@ -1234,33 +1234,11 @@
 }
 
 /* Update media queries for mobile */
-@media (max-width: 768px) {
-  .gallery-grid.animated-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 900px) {
-  .main-content {
-    padding: 2rem 1rem;
-    margin-left: 0.5rem;
-  }
-  .basket-container {
-    bottom: 16px;
-    right: 16px;
-  }
-  .basket-button {
-    width: 48px;
-    height: 48px;
-    font-size: 1.3rem;
-  }
-}
-
-/* Add new media query for iPhone-sized screens */
 @media (max-width: 480px) {
   .admin-menu-items-grid.animated-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 14px;
+    margin-top: 12px;
   }
   
   .admin-menu-item-card {
@@ -1276,25 +1254,39 @@
     font-size: 14px;
   }
   
-  .admin-header-row h1 {
-    font-size: 24px !important;
+  .admin-header-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+    margin-bottom: 16px;
   }
   
-  .admin-header-row div:first-child div {
+  .admin-header-row h1 {
+    font-size: 22px !important;
+    margin-bottom: 2px !important;
+  }
+  
+  .admin-header-row .subtitle {
     color: #888;
-    font-size: 13px !important; 
+    font-size: 11px !important; 
+    line-height: 1.2;
+    white-space: nowrap;
+    opacity: 0.8;
   }
   
   .admin-edit-btn, .admin-add-btn {
-    padding: 6px 12px;
-    font-size: 14px;
-    display: flex;
-    align-items: center;
-    height: 34px;
+    padding: 4px 6px;
+    font-size: 12px;
+    height: 28px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 110px;
   }
   
   .admin-edit-btn svg, .admin-add-btn svg {
-    margin-right: 6px;
-    font-size: 16px;
+    margin-right: 3px;
+    font-size: 12px;
+    min-width: 12px;
   }
 }
