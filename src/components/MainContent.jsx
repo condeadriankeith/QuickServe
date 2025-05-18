@@ -474,7 +474,7 @@ const MainContent = ({
       <main className="main-content admin-menu-panel">
         <div className="admin-header-row">
           <div>
-            <h1 style={{ display: 'flex', alignItems: 'center', gap: 12, fontSize: 32, fontWeight: 700, margin: 0 }}>
+            <h1 style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: 32, fontWeight: 700, margin: 0 }}>
               {currentCategory.icon} {currentCategory.label}
             </h1>
             <div className="subtitle" style={{ fontSize: 15, marginTop: 4 }}>{formattedDate} • {items.length} items</div>

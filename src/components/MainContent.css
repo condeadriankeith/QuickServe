@@ -1272,6 +1272,14 @@
   .admin-header-row h1 {
     font-size: 22px !important;
     margin-bottom: 2px !important;
+    padding-left: 4px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .admin-header-row h1 svg {
+    margin-right: 8px;
+    font-size: 18px;
   }
   
   .admin-header-row .subtitle {
@@ -1280,6 +1288,7 @@
     line-height: 1.2;
     white-space: nowrap;
     opacity: 0.8;
+    padding-left: 30px;
   }
   
   .admin-edit-btn, .admin-add-btn {
