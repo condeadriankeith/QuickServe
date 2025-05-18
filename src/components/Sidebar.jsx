@@ -63,34 +63,34 @@ const Sidebar = ({ activeTab, onTabChange, counts, role, todayStats, sidebarOpen
         {sidebarOpen && <div className="sidebar-overlay" onClick={() => setSidebarOpen(false)}></div>}
         <aside className={`sidebar${sidebarOpen ? ' open' : ''}`}>
           <div className="sidebar-section-title">Menu</div>
-          <nav className="sidebar-nav">
-            <div
-              className={`nav-item${activeTab === 'Appetizer' ? ' active' : ''}`}
+        <nav className="sidebar-nav">
+          <div
+            className={`nav-item${activeTab === 'Appetizer' ? ' active' : ''}`}
               onClick={() => { onTabChange('Appetizer'); setSidebarOpen(false); }}
-              style={{ cursor: 'pointer' }}
-            >
-              <FaUtensils className="nav-icon" />
-              <span className="nav-text">Appetizers</span>
-            </div>
-            <div
-              className={`nav-item${activeTab === 'Main' ? ' active' : ''}`}
+            style={{ cursor: 'pointer' }}
+          >
+            <FaUtensils className="nav-icon" />
+            <span className="nav-text">Appetizers</span>
+          </div>
+          <div
+            className={`nav-item${activeTab === 'Main' ? ' active' : ''}`}
               onClick={() => { onTabChange('Main'); setSidebarOpen(false); }}
-              style={{ cursor: 'pointer' }}
-            >
-              <FaHamburger className="nav-icon" />
-              <span className="nav-text">Mains</span>
-            </div>
-            <div
-              className={`nav-item${activeTab === 'Drink' ? ' active' : ''}`}
+            style={{ cursor: 'pointer' }}
+          >
+            <FaHamburger className="nav-icon" />
+            <span className="nav-text">Mains</span>
+          </div>
+          <div
+            className={`nav-item${activeTab === 'Drink' ? ' active' : ''}`}
               onClick={() => { onTabChange('Drink'); setSidebarOpen(false); }}
-              style={{ cursor: 'pointer' }}
-            >
-              <FaWineGlass className="nav-icon" />
-              <span className="nav-text">Drinks</span>
-            </div>
-          </nav>
-          {renderStats()}
-        </aside>
+            style={{ cursor: 'pointer' }}
+          >
+            <FaWineGlass className="nav-icon" />
+            <span className="nav-text">Drinks</span>
+          </div>
+        </nav>
+        {renderStats()}
+      </aside>
       </>
     );
   }
@@ -100,37 +100,37 @@ const Sidebar = ({ activeTab, onTabChange, counts, role, todayStats, sidebarOpen
       {sidebarOpen && <div className="sidebar-overlay" onClick={() => setSidebarOpen(false)}></div>}
       <aside className={`sidebar${sidebarOpen ? ' open' : ''}`}>
         <div className="sidebar-section-title">Orders</div>
-        <nav className="sidebar-nav">
-          <div
-            className={`nav-item${activeTab === 'active' ? ' active' : ''}`}
+      <nav className="sidebar-nav">
+        <div
+          className={`nav-item${activeTab === 'active' ? ' active' : ''}`}
             onClick={() => { onTabChange('active'); setSidebarOpen(false); }}
-            style={{ cursor: 'pointer' }}
-          >
-            <FaBolt className="nav-icon" />
-            <span className="nav-text">Active Orders</span>
-            <span className="badge">{counts.active}</span>
-          </div>
-          <div
-            className={`nav-item${activeTab === 'pending' ? ' active' : ''}`}
+          style={{ cursor: 'pointer' }}
+        >
+          <FaBolt className="nav-icon" />
+          <span className="nav-text">Active Orders</span>
+          <span className="badge">{counts.active}</span>
+        </div>
+        <div
+          className={`nav-item${activeTab === 'pending' ? ' active' : ''}`}
             onClick={() => { onTabChange('pending'); setSidebarOpen(false); }}
-            style={{ cursor: 'pointer' }}
-          >
-            <FontAwesomeIcon icon={faClock} className="nav-icon" />
-            <span className="nav-text">Pending</span>
-            <span className="count">{counts.pending}</span>
-          </div>
-          <div
-            className={`nav-item${activeTab === 'completed' ? ' active' : ''}`}
+          style={{ cursor: 'pointer' }}
+        >
+          <FontAwesomeIcon icon={faClock} className="nav-icon" />
+          <span className="nav-text">Pending</span>
+          <span className="count">{counts.pending}</span>
+        </div>
+        <div
+          className={`nav-item${activeTab === 'completed' ? ' active' : ''}`}
             onClick={() => { onTabChange('completed'); setSidebarOpen(false); }}
-            style={{ cursor: 'pointer' }}
-          >
-            <FaCheckCircle className="nav-icon green" />
-            <span className="nav-text">Completed</span>
-            <span className="count green">{counts.completed}</span>
-          </div>
-        </nav>
-        {renderStats()}
-      </aside>
+          style={{ cursor: 'pointer' }}
+        >
+          <FaCheckCircle className="nav-icon green" />
+          <span className="nav-text">Completed</span>
+          <span className="count green">{counts.completed}</span>
+        </div>
+      </nav>
+      {renderStats()}
+    </aside>
     </>
   );
 };

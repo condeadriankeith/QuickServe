@@ -449,36 +449,136 @@
 }
 
 @media (max-width: 600px) {
+  /* Main card scaling with preserved proportions */
   .order-card {
     border-radius: 14px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.07);
-    padding: 12px;
-    font-size: 1.02rem;
-    margin-bottom: 0;
+    padding: 14px;
+    font-size: 0.95rem;
+    margin-bottom: 12px;
+    width: 100%;
+    max-width: 100%;
+    gap: 10px;
+    transform: scale(0.98);
+    transform-origin: top center;
   }
-  .btn-complete,
-  .btn-start,
-  .btn-continue {
-    padding: 4px 5px;
-    font-size: 0.85rem;
-    border-radius: 5px;
-    gap: 2px;
+  
+  /* Maintain header layout similar to desktop */
+  .card-header {
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 10px;
   }
-  .btn-icon {
-    width: 24px;
-    height: 24px;
-    font-size: 10px;
-    border-radius: 4px;
+  
+  .order-id-and-tags {
+    flex: 1;
   }
-  .remove-item-btn {
-    padding: 1px;
-    font-size: 0.85rem;
+  
+  .order-id {
+    font-size: 16px;
+    margin-right: 4px;
   }
-  .item-quantity-controls {
-    gap: 2px;
+  
+  /* Status tags with proportional scaling */
+  .status-tags {
+    gap: 4px;
   }
+  
+  .tag {
+    padding: 3px 8px;
+    font-size: 11px;
+    font-weight: 600;
+    border-radius: 12px;
+  }
+  
+  /* Customer and order type info */
+  .customer-type-row {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .customer, .order-type {
+    font-size: 12px;
+  }
+  
+  /* Table info with proper spacing */
+  .table-info {
+    margin-bottom: 8px;
+    font-size: 12px;
+    gap: 6px;
+  }
+  
+  /* Order items with proper scaling */
+  .order-items {
+    gap: 6px;
+    margin-bottom: 10px;
+  }
+  
+  .item {
+    font-size: 13px;
+  }
+  
+  .item-name {
+    width: 70%;
+    word-break: break-word;
+  }
+  
+  /* Special instructions scaling */
+  .special-instructions {
+    padding: 10px;
+    margin-bottom: 8px;
+  }
+  
+  .instructions-header {
+    margin-bottom: 6px;
+    font-size: 13px;
+  }
+  
+  .special-instructions p {
+    font-size: 12px;
+    margin-left: 20px;
+  }
+  
+  /* Button and control scaling */
+  .card-footer {
+    margin-top: 10px;
+  }
+  
+  .customer-action-col {
+    width: 100%;
+  }
+  
   .action-buttons {
-    gap: 2px;
-    margin-top: 8px;
+    justify-content: center;
+    margin-top: 16px;
+    gap: 8px;
+  }
+  
+  .action-buttons .btn-complete,
+  .action-buttons .btn-start,
+  .action-buttons .btn-continue {
+    width: 100%;
+    max-width: 100%;
+    justify-content: center;
+    padding: 12px 0;
+    font-size: 14px;
+    border-radius: 10px;
+  }
+  
+  .btn-icon {
+    width: 44px;
+    height: 44px;
+    font-size: 14px;
+    border-radius: 10px;
+  }
+  
+  .item-quantity-controls {
+    gap: 4px;
+  }
+  
+  .remove-item-btn {
+    padding: 3px;
+    font-size: 0.85rem;
   }
 }
