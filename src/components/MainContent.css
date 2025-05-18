@@ -166,18 +166,19 @@
 
 .modal-form input,
 .modal-form select {
-  padding: 8px 12px;
+  padding: 10px 14px;
   border-radius: var(--border-radius-sm);
-  border: 1px solid #e0e0e0;
+  border: 1.5px solid #e0e0e0;
   font-size: 1rem;
-  background: #fafafa;
-  transition: border 0.2s;
+  background: #f7f7fa;
+  transition: border 0.2s, box-shadow 0.2s;
 }
 
 .modal-form input:focus,
 .modal-form select:focus {
   outline: none;
   border: 1.5px solid var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(244, 93, 34, 0.08);
 }
 
 .modal-actions {
@@ -685,26 +686,27 @@
 
 .order-summary-form input,
 .order-summary-form select {
-  padding: 10px 12px;
+  padding: 10px 14px;
   border-radius: var(--border-radius-sm);
   border: 1.5px solid #e0e0e0;
+  font-size: 1rem;
   background: #f7f7fa;
-  font-size: 0.95rem;
+  transition: border 0.2s, box-shadow 0.2s;
 }
 
 .order-summary-form input:focus,
 .order-summary-form select:focus {
   outline: none;
   border-color: var(--primary-color);
-  box-shadow: 0 0 0 2px rgba(244, 93, 34, 0.1);
+  box-shadow: 0 0 0 2px rgba(244, 93, 34, 0.08);
 }
 
 .order-summary-form select {
-  padding: 10px 12px 10px 30px;
+  padding: 10px 14px;
   appearance: none;
   background-image: url("data:image/svg+xml;utf8,<svg fill='%23555' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
   background-repeat: no-repeat;
-  background-position: 8px center;
+  background-position: calc(100% - 12px) center;
 }
 
 .order-summary-actions {
@@ -813,16 +815,21 @@
 [data-theme="dark"] .modal-form input,
 [data-theme="dark"] .modal-form select,
 [data-theme="dark"] .modal-form-horizontal input,
-[data-theme="dark"] .modal-form-horizontal select {
+[data-theme="dark"] .modal-form-horizontal select,
+[data-theme="dark"] .order-summary-form input,
+[data-theme="dark"] .order-summary-form select {
   background: #23242a;
   color: var(--text-color);
-  border: 1px solid #444;
+  border: 1.5px solid #444;
 }
 [data-theme="dark"] .modal-form input:focus,
 [data-theme="dark"] .modal-form select:focus,
 [data-theme="dark"] .modal-form-horizontal input:focus,
-[data-theme="dark"] .modal-form-horizontal select:focus {
+[data-theme="dark"] .modal-form-horizontal select:focus,
+[data-theme="dark"] .order-summary-form input:focus,
+[data-theme="dark"] .order-summary-form select:focus {
   border: 1.5px solid var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(244, 93, 34, 0.08);
 }
 [data-theme="dark"] .gallery-item {
   background: #23242a;
@@ -878,6 +885,7 @@
   background: #23242a;
   color: var(--text-color);
   border: 1px solid #444;
+  background-position: calc(100% - 12px) center;
 }
 [data-theme="dark"] .modal-form select:focus,
 [data-theme="dark"] .modal-form-horizontal select:focus,
@@ -1216,9 +1224,12 @@
   }
   .modal-form input,
   .modal-form select {
-    padding: 10px 12px !important;
+    padding: 10px 14px !important;
     font-size: 14px !important;
     border-radius: 8px !important;
+    background: #f7f7fa !important;
+    border: 1.5px solid #e0e0e0 !important;
+    transition: border 0.2s, box-shadow 0.2s !important;
   }
   .modal-actions {
     gap: 10px !important;
@@ -1258,9 +1269,19 @@
   }
   .order-summary-form input,
   .order-summary-form select {
-    padding: 10px 12px !important;
+    padding: 10px 14px !important;
     font-size: 14px !important;
     border-radius: 8px !important;
+    background: #f7f7fa !important;
+    border: 1.5px solid #e0e0e0 !important;
+    transition: border 0.2s, box-shadow 0.2s !important;
+  }
+  
+  .order-summary-form select {
+    appearance: none !important;
+    background-image: url("data:image/svg+xml;utf8,<svg fill='%23555' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>") !important;
+    background-repeat: no-repeat !important;
+    background-position: calc(100% - 12px) center !important;
   }
   .order-summary-actions {
     gap: 10px !important;
