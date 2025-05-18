@@ -389,48 +389,4 @@
     min-height: 38px;
     margin-top: 8px;
   }
-}
-
-.theme-toggle-container {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  z-index: 10;
-}
-
-.login-theme-toggle {
-  background: rgba(255, 255, 255, 0.2);
-  border: none;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  backdrop-filter: blur(4px);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-}
-
-.login-theme-toggle:hover {
-  background: rgba(255, 255, 255, 0.3);
-  transform: translateY(-2px);
-}
-
-.theme-toggle-icon {
-  color: #F45D22;
-  font-size: 18px;
-}
-
-[data-theme="dark"] .login-theme-toggle {
-  background: rgba(36, 37, 42, 0.6);
-}
-
-[data-theme="dark"] .login-theme-toggle:hover {
-  background: rgba(36, 37, 42, 0.8);
-}
-
-[data-theme="dark"] .theme-toggle-icon {
-  color: #F45D22;
 } 

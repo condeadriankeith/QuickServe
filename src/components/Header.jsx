@@ -1,9 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faKitchenSet } from '@fortawesome/free-solid-svg-icons';
-import { FaBell, FaMoon, FaSun } from 'react-icons/fa';
+import { FaBell } from 'react-icons/fa';
 import './Header.css';
-import { useTheme } from '../ThemeContext';
 
 function timeAgo(timestamp) {
   const now = Date.now();
@@ -18,14 +17,10 @@ function timeAgo(timestamp) {
 
 const Header = ({ notifications = [], unreadCount = 0, notifPopupOpen = false, setNotifPopupOpen = () => {}, onLogout, onSidebarToggle, sidebarOpen }) => {
   const [logoutModalOpen, setLogoutModalOpen] = useState(false);
-  const [profilePopupOpen, setProfilePopupOpen] = useState(false);
   const notifBtnRef = useRef(null);
   const notifPopupRef = useRef(null);
-  const profileRef = useRef(null);
-  const profilePopupRef = useRef(null);
   const [bellAnim, setBellAnim] = useState(false);
   const prevNotifCount = useRef(notifications.length);
-  const { theme, toggleTheme } = useTheme();
 
   // Close notification popup on outside click
   useEffect(() => {
@@ -44,23 +39,6 @@ const Header = ({ notifications = [], unreadCount = 0, notifPopupOpen = false, s
     return () => document.removeEventListener('mousedown', handleClick);
   }, [notifPopupOpen]);
 
-  // Close profile popup on outside click
-  useEffect(() => {
-    if (!profilePopupOpen) return;
-    function handleClick(e) {
-      if (
-        profilePopupRef.current &&
-        !profilePopupRef.current.contains(e.target) &&
-        profileRef.current &&
-        !profileRef.current.contains(e.target)
-      ) {
-        setProfilePopupOpen(false);
-      }
-    }
-    document.addEventListener('mousedown', handleClick);
-    return () => document.removeEventListener('mousedown', handleClick);
-  }, [profilePopupOpen]);
-
   // Animate bell on every new notification
   useEffect(() => {
     if (notifications.length > prevNotifCount.current) {
@@ -72,7 +50,6 @@ const Header = ({ notifications = [], unreadCount = 0, notifPopupOpen = false, s
 
   const handleLogoutClick = () => {
     setLogoutModalOpen(false);
-    setProfilePopupOpen(false);
     if (onLogout) onLogout();
   };
 
@@ -102,7 +79,6 @@ const Header = ({ notifications = [], unreadCount = 0, notifPopupOpen = false, s
           ref={notifBtnRef}
           onClick={() => {
             setNotifPopupOpen(v => !v);
-            setProfilePopupOpen(false);
           }}
         >
           {unreadCount > 0 && (
@@ -126,36 +102,13 @@ const Header = ({ notifications = [], unreadCount = 0, notifPopupOpen = false, s
             </ul>
           </div>
         )}
-        <div className="avatar" style={{ position: 'relative' }} ref={profileRef}>
+        <div className="avatar" style={{ position: 'relative' }}>
           <img
             src="https://ui-avatars.com/api/?name=User&background=246BFD&color=fff"
             alt="User"
             style={{ cursor: 'pointer' }}
-            onClick={() => {
-              setProfilePopupOpen(v => !v);
-              setNotifPopupOpen(false);
-            }}
+            onClick={() => setLogoutModalOpen(true)}
           />
-          {profilePopupOpen && (
-            <div className="profile-popup" ref={profilePopupRef}>
-              <button className="theme-toggle-btn" onClick={toggleTheme}>
-                {theme === 'dark' ? (
-                  <>
-                    <FaSun className="theme-icon" />
-                    <span>Light Mode</span>
-                  </>
-                ) : (
-                  <>
-                    <FaMoon className="theme-icon" />
-                    <span>Dark Mode</span>
-                  </>
-                )}
-              </button>
-              <button className="logout-btn" onClick={() => setLogoutModalOpen(true)}>
-                Log Out
-              </button>
-            </div>
-          )}
         </div>
       </div>
       {/* Centered logout modal */}
@@ -174,10 +127,9 @@ const Header = ({ notifications = [], unreadCount = 0, notifPopupOpen = false, s
         }}>
           <div
             style={{
-              background: theme === 'dark' ? '#23242a' : '#fff',
-              color: theme === 'dark' ? '#f3f3f3' : '#333',
+              background: '#fff',
               borderRadius: 12,
-              boxShadow: theme === 'dark' ? '0 8px 32px rgba(0,0,0,0.65)' : '0 8px 32px rgba(0,0,0,0.18)',
+              boxShadow: '0 8px 32px rgba(0,0,0,0.18)',
               padding: '24px',
               width: 320,
               display: 'flex',
@@ -198,8 +150,8 @@ const Header = ({ notifications = [], unreadCount = 0, notifPopupOpen = false, s
             }}>
               <button
                 style={{
-                  background: theme === 'dark' ? '#18191c' : '#eee',
-                  color: theme === 'dark' ? '#f3f3f3' : '#333',
+                  background: '#eee',
+                  color: '#333',
                   fontSize: 16,
                   fontWeight: 500,
                   borderRadius: 6,

@@ -6,7 +6,6 @@ import MainContent from './components/MainContent';
 import Login from './components/Login';
 import { FaUtensils, FaHamburger, FaWineGlass } from 'react-icons/fa';
 import { io } from 'socket.io-client';
-import { ThemeProvider } from './ThemeContext';
 
 // --- Order Event Logging Utility ---
 const ORDER_LOG_KEY = 'orderEventLogs';
@@ -509,24 +508,22 @@ function App() {
   };
 
   return (
-    <ThemeProvider>
-      <Router>
-        <Routes>
-          <Route path="/login" element={<Login onLogin={handleLogin} />} />
-          <Route
-            path="/"
-            element={
-              isAuthenticated ? (
-                <Dashboard onLogout={handleLogout} role={role} />
-              ) : (
-                <Navigate to="/login" replace />
-              )
-            }
-          />
-          <Route path="*" element={<Navigate to="/login" replace />} />
-        </Routes>
-      </Router>
-    </ThemeProvider>
+    <Router>
+      <Routes>
+        <Route path="/login" element={<Login onLogin={handleLogin} />} />
+        <Route
+          path="/"
+          element={
+            isAuthenticated ? (
+              <Dashboard onLogout={handleLogout} role={role} />
+            ) : (
+              <Navigate to="/login" replace />
+            )
+          }
+        />
+        <Route path="*" element={<Navigate to="/login" replace />} />
+      </Routes>
+    </Router>
   );
 }
 
