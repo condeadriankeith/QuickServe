@@ -484,7 +484,7 @@ const MainContent = ({
               <FaEdit /> Edit
             </button>
             <button className="admin-add-btn" style={{ background: 'var(--primary-color)', color: '#fff', border: 'none', borderRadius: 8, cursor: 'pointer', boxShadow: '0 2px 8px rgba(244,93,34,0.08)', transition: 'all 0.2s' }} onClick={openAddFoodItemModal}>
-              <FaPlus /> Add Food Item
+              <FaPlus /> <span className="button-text">Add Item</span>
             </button>
           </div>
         </div>

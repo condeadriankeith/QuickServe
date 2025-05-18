@@ -1291,19 +1291,50 @@
     padding-left: 30px;
   }
   
-  .admin-edit-btn, .admin-add-btn {
+  .admin-edit-btn {
     padding: 4px 6px;
     font-size: 12px;
     height: 28px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    max-width: 110px;
+    max-width: 60px;
+  }
+  
+  .admin-add-btn {
+    padding: 4px 8px;
+    font-size: 12px;
+    height: 28px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 140px;
+    min-width: 120px;
   }
   
   .admin-edit-btn svg, .admin-add-btn svg {
     margin-right: 3px;
     font-size: 12px;
     min-width: 12px;
+  }
+}
+
+/* Responsive button text */
+.button-text {
+  display: inline-block;
+}
+
+@media (max-width: 480px) {
+  /* Additional mobile-only CSS */
+  .admin-add-btn .button-text::before {
+    content: "Add";
+  }
+  
+  .admin-add-btn .button-text {
+    position: relative;
+  }
+  
+  .admin-add-btn .button-text span {
+    display: none;
   }
 }
