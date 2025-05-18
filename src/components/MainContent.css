@@ -1259,6 +1259,14 @@
     align-items: flex-start;
     gap: 14px;
     margin-bottom: 16px;
+    width: 100%;
+  }
+  
+  .admin-header-row > div:last-child {
+    align-self: flex-end;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
   }
   
   .admin-header-row h1 {
